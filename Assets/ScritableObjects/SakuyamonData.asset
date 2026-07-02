@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dbc4ad407f8fcd45bb950270703d275, type: 3}
+  m_Name: SakuyamonData
+  m_EditorClassIdentifier: Assembly-CSharp::FighterData
+  maxHealth: 200
+  fightername: 
+  attacks:
+  - name: GolpeMagico
+    animationName: Attack1
+    attackSoundName: Attack1_Sakuyamon
+    minDamage: 60
+    maxDamage: 80
+    chargeParticles: {fileID: 1860942925026742254, guid: 70497d1ca500fe64fb9456239db4219a, type: 3}
+    attackParticles: {fileID: 529079273526004142, guid: e8715388312bfd949a58e1ba34cc1e95, type: 3}
+  - name: CirculoMagico
+    animationName: Attack2
+    attackSoundName: Attack2_Sakuyamon
+    minDamage: 40
+    maxDamage: 70
+    chargeParticles: {fileID: 1860942925026742254, guid: 70497d1ca500fe64fb9456239db4219a, type: 3}
+    attackParticles: {fileID: 529079273526004142, guid: e8715388312bfd949a58e1ba34cc1e95, type: 3}
+  chargeTime: 2
+  appearParticles: {fileID: 6856980875906832317, guid: afeb70dfc46d5c247995ba9a852dff39, type: 3}
+  appearSoundName: Appear_Presentacion_Sakuyamon
+  damageSoundName: Damage_Sakuyamon
+  deadSoundName: Damage_Sakuyamon
