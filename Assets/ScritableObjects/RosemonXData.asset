@@ -13,24 +13,24 @@ MonoBehaviour:
   m_Name: RosemonXData
   m_EditorClassIdentifier: Assembly-CSharp::FighterData
   maxHealth: 200
-  fightername: 
+  fighterName: 
   attacks:
   - name: AtaqueHojas
     animationName: Attack1
     attackSoundName: Attack1_RosemonX
-    minDamage: 60
-    maxDamage: 40
-    chargeParticles: {fileID: 3730389206764797409, guid: 8c8d363b759913d4d9b66902cf9a7ad5, type: 3}
+    minDamage: 6
+    maxDamage: 4
+    chargeParticles: {fileID: 5018119361396607779, guid: 90fc73c4d3c8acb46a2c69e90b6fb99a, type: 3}
     attackParticles: {fileID: 7841092616646866677, guid: 3e797059f096a084cb098b2a7a0de298, type: 3}
   - name: GolpeHojas
     animationName: Attack2
     attackSoundName: Attack2_RosemonX2
-    minDamage: 40
-    maxDamage: 70
-    chargeParticles: {fileID: 3730389206764797409, guid: 8c8d363b759913d4d9b66902cf9a7ad5, type: 3}
+    minDamage: 4
+    maxDamage: 7
+    chargeParticles: {fileID: 5018119361396607779, guid: 90fc73c4d3c8acb46a2c69e90b6fb99a, type: 3}
     attackParticles: {fileID: 7841092616646866677, guid: 3e797059f096a084cb098b2a7a0de298, type: 3}
   chargeTime: 2
-  appearParticles: {fileID: 7841092616646866677, guid: 3e797059f096a084cb098b2a7a0de298, type: 3}
+  appearParticles: {fileID: 2317300692926809521, guid: 0a2c83c57abfe184eab413027fd90691, type: 3}
   appearSoundName: Appear_Presentacion_Rosemon
   damageSoundName: Damage_Rosemon
   deadSoundName: Die_RosemonX

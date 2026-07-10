@@ -22,4 +22,5 @@ public class WinScreen : MonoBehaviour
         isHidden = true;
         animator.Play("Hide", 0, 0f);
     }
+    
 }

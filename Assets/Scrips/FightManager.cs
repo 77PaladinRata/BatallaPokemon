@@ -11,6 +11,10 @@ public class FightManager : MonoBehaviour
     private UnityEvent onCancelFight; ///*NO Attack
     [SerializeField] ///* Cancelando Ataque
     private UnityEvent onFightStart;///*NO Attack
+    [SerializeField] ///* Nueva JJJJJJJJJJJJJJ
+    private UnityEvent<string> onFightEnd; ///* not - END 
+    [SerializeField]  ///* cuanto le queda de vida
+    private UnityEvent<DamageTarget> onDamageTaken; ///* numero de vida
     [SerializeField]
     private int minimumFighters = 2;
     [SerializeField]
@@ -18,13 +22,17 @@ public class FightManager : MonoBehaviour
     [SerializeField]
     private PoolManager poolManager; ///* falto este
     private List<Fighter> fighters = new List<Fighter>();
+    private DamageTarget damageTarget = new DamageTarget(); ///* PV creo?
     public void AddFighter(Fighter fighter)
     {
         if (fighters.Count < maximumFighters && !fighters.Contains(fighter))
         {   ///* agregando los sonidos que mas o menos se escuchan
             poolManager.GetObject(fighter.FighterData.appearParticles, fighter.transform.position);
             SoundManager.instance.Play(fighter.FighterData. appearSoundName);
-            fighters.Add(fighter);
+            fighters.Add(fighter); ///* Agregando Dialogo RPG              ///*  I CAST MAGIC Digimon
+            DialogSystem.Instance.ShowDialog(fighter.FighterData.fighterName + " has joined the fight!"); 
+            fighter.Health.InitializeHealth(); ///* antes del parcial}}}}}}}}}}}}}}
+            fighter.Animator.Play("Idle", 0, 0f); ///* antes del parcial}}}}}}}}}}}
             if (fighters.Count >= minimumFighters)
             {
                 onFightReady?.Invoke();
@@ -65,7 +73,8 @@ public class FightManager : MonoBehaviour
             attacker.transform.LookAt (defender. transform);
             defender.transform. LookAt(attacker.transform);
             attacker.Animator.Play("Charge", 0, 0f);
-            poolManager.GetObject(attackData.chargeParticles, attacker.transform.position);
+            poolManager.GetObject(attackData.chargeParticles, attacker.transform.position); ///* Dialogo de ataque
+            DialogSystem. Instance.ShowDialog(attacker.FighterData. fighterName + " attacks with " + attackData.name + "!"); ///*********
             yield return new WaitForSeconds(attacker.FighterData. chargeTime);
             ///* Separarlas para particulas eso creo
             attacker.Animator.Play(attackData.animationName, 0, 0f);
@@ -78,17 +87,29 @@ public class FightManager : MonoBehaviour
             Health defenderHealth = defender.GetComponent<Health>();
             SoundManager.instance.Play(defender.FighterData.damageSoundName); ///* sonido ************************************
             defenderHealth. TakeDamage (Random.Range(attackData.minDamage, attackData.maxDamage));
+            ///* agregando MAS codigo ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
+            float damage = Random. Range(attackData.minDamage, attackData.maxDamage);
+            damageTarget.SetDamageTarget(defender.transform, damage);
+            defenderHealth.TakeDamage (damage);
+            onDamageTaken?.Invoke(damageTarget);
             if (defenderHealth.CurrentHealth <= 0)
             {   ///* nesecitamos diviciones de paranras
                 SoundManager.instance.Play(defender.FighterData.damageSoundName); ///* sonido ************************************
-                RemoveFighter(defender);
+                RemoveFighter(defender);            ///* Dialogo de ataque
+                DialogSystem. Instance.ShowDialog(attacker.FighterData.fighterName + " wins the fight!"); ///***** 
                 FighterWin(attacker);
             }
             yield return new WaitForSeconds(1.5f);
         }
     }
+    ///*private void FighterWin(Fighter winner)
+    ///*{
+        ///*Debug. Log(winner.name + " wins the fight!");
+    ///*} ///* Poniendo cosas Nuevas
     private void FighterWin(Fighter winner)
     {
-        Debug. Log(winner.name + " wins the fight!");
+        onFightEnd ?. Invoke(winner.FighterData.fighterName);
+        winner.Animator.Play("Victory", 0, 0f);
+        winner.transform.LookAt(Camera.main. transform);
     }
 }

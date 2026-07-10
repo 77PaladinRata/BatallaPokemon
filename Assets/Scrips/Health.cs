@@ -17,6 +17,7 @@ public class Health : MonoBehaviour
     public void InitializeHealth()
     {
         currentHealth = maxHealth;
+        UpdateBar(); ///* cambio antes del parcial}}}}}}
     }
     private void UpdateBar()
     {

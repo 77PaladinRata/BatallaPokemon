@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dbc4ad407f8fcd45bb950270703d275, type: 3}
+  m_Name: KitBodegamon
+  m_EditorClassIdentifier: Assembly-CSharp::FighterData
+  maxHealth: 200
+  fighterName: 
+  attacks:
+  - name: Ataque de amor
+    animationName: Attack1
+    attackSoundName: Attack1_KitBodegamon
+    minDamage: 50
+    maxDamage: 45
+    chargeParticles: {fileID: 2880057000815664381, guid: 9f47d2b482f704f4cb8b27e49624d62c, type: 3}
+    attackParticles: {fileID: 7425050745978861009, guid: a7941b93122668544a1731a8cd7bea50, type: 3}
+  - name: Ataque lelectrico
+    animationName: Attack2
+    attackSoundName: Attack2_KitBodegamon
+    minDamage: 40
+    maxDamage: 60
+    chargeParticles: {fileID: 1237421812997501502, guid: 85dbf60b86aca804eab07039bb256e6e, type: 3}
+    attackParticles: {fileID: 7346661574736461560, guid: ab19e3f7c8e38834ca78c91507131d77, type: 3}
+  chargeTime: 2
+  appearParticles: {fileID: 4189754701142716675, guid: 0a4c8601010b4c14a9a84bc389fd21b4, type: 3}
+  appearSoundName: Appear_Presentacion_KidBodegamon
+  damageSoundName: Damage_KidBodegamon
+  deadSoundName: Die_KidBodegamon
