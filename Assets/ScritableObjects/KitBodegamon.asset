@@ -18,15 +18,15 @@ MonoBehaviour:
   - name: Ataque de amor
     animationName: Attack1
     attackSoundName: Attack1_KitBodegamon
-    minDamage: 5
-    maxDamage: 45
+    minDamage: 45
+    maxDamage: 65
     chargeParticles: {fileID: 2880057000815664381, guid: 9f47d2b482f704f4cb8b27e49624d62c, type: 3}
     attackParticles: {fileID: 7425050745978861009, guid: a7941b93122668544a1731a8cd7bea50, type: 3}
   - name: Ataque lelectrico
     animationName: Attack2
     attackSoundName: Attack2_KitBodegamon
-    minDamage: 4
-    maxDamage: 6
+    minDamage: 55
+    maxDamage: 45
     chargeParticles: {fileID: 1237421812997501502, guid: 85dbf60b86aca804eab07039bb256e6e, type: 3}
     attackParticles: {fileID: 7346661574736461560, guid: ab19e3f7c8e38834ca78c91507131d77, type: 3}
   chargeTime: 2
