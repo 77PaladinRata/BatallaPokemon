@@ -22,13 +22,6 @@ MonoBehaviour:
     maxDamage: 40
     chargeParticles: {fileID: 8382470769705604817, guid: b3d44a54acedd0b419d3c027ab583504, type: 3}
     attackParticles: {fileID: 3059923753992782324, guid: 0aac856705ca36145a194ca32b059e70, type: 3}
-  - name: yo casteo lasser
-    animationName: Attack2
-    attackSoundName: Wizard_I Cast
-    minDamage: 40
-    maxDamage: 60
-    chargeParticles: {fileID: 1892157212751092467, guid: 265dfb78eb9cf274d9316faff58a9418, type: 3}
-    attackParticles: {fileID: 3059923753992782324, guid: 0aac856705ca36145a194ca32b059e70, type: 3}
   chargeTime: 2
   appearParticles: {fileID: 585406518283072270, guid: 5842bf08477a54b40aa474292f41e656, type: 3}
   appearSoundName: wizard_ appear
